@@ -12,15 +12,15 @@ interface ButtonProps extends ButtonHTMLAttributes <HTMLButtonElement> {
 
 const Button: React.FC<ButtonProps> = ({children, variant= 'primary', size= 'lg', fullwidth = false, isLoading = false, className='', ...rest}) => {
 
-    const baseStyling = 'font-medium rounded-md focus:outline-none transition-colors duration-200 cursor-pointer'
+    const baseStyling = 'font-medium focus:outline-none transition-colors duration-200 cursor-pointer'
     
     const variantStyling = {
-      primary: 'bg-nature-green text-white hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50',
-        secondary: 'bg-nature-green text-white hover:bg-orange-400 focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 rounded-full'
+      primary: 'bg-nature-green text-white hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md',
+      secondary: 'bg-gray-700 text-white hover:bg-gray-800 focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50 rounded-r-md'
     }
 
     const sizeStyling = {
-      'md': 'px-6 py-3 text-base',
+      'md': 'px-4 py-2.5 text-base',
       'lg': 'px-8 py-3 text-lg',
     };
 

@@ -10,9 +10,9 @@
   --color-nature-green: #8bc34a;
   --color-vibrant-green: #34c759;
 }
-/* 
-@layer base {
-  h2{
-    @apply bg-gradient-to-r from-nature-green from-50% to-vibrant-green to-50% bg-clip-text text-transparent text=extrabold;
-  }
-} */
+ 
+/* @layer base {
+  input{
+    @apply w-full text-sm md: text-xl p-2 border border-gray-500 rounded-l-md outline-none;
+  }  
+}  */
