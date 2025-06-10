@@ -1,8 +1,6 @@
 @import "tailwindcss";
+@layer theme, base, components, utilities;
 
-* {
-  font-family: Outfit;
-}
 
 @theme {
   --color-calming-blue: #4567b7;
@@ -11,8 +9,8 @@
   --color-vibrant-green: #34c759;
 }
  
-/* @layer base {
+@layer base {
   input{
-    @apply w-full text-sm md: text-xl p-2 border border-gray-500 rounded-l-md outline-none;
+    @apply w-full text-sm md:text-xl p-2 border border-gray-500 rounded-l-md outline-none;
   }  
-}  */
+} 
