@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import Climate from "@/assets/climate.png"
+import Climate from "@/assets/bg.svg"
 import Button from "@/components/Button";
 import { HiArrowRight } from "react-icons/hi";
 import { useRouter } from "next/navigation";

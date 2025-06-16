@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${outfit.className} antialiased`}
+        className={`${inter.className} ${outfit.className} antialiased overflow-x-hidden dark scrollbar-thin scrollbar-track-nature-green scrollbar-thumb-nature-green`}
       >
         <Header />
         {children}
