@@ -15,7 +15,7 @@ export default function Forecast() {
   const [location, setLocation] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-    const [weatherData, setWeatherData] = useState<WeatherState>({
+  const [weatherData, setWeatherData] = useState<WeatherState>({
     temp: "--",
     location: "Lagos",
     description: "Mostly Cloudy",
@@ -43,13 +43,13 @@ export default function Forecast() {
       const res = await fetch(api_url);
 
       if (!res.ok) {
-        if(res.status === 404 ){
-            setError("Enter a valid Location");
-        }else {
-            setError("Please Try Again...")
+        if (res.status === 404) {
+          setError("Enter a valid Location");
+        } else {
+          setError("Please Try Again...");
         }
 
-        return
+        return;
       }
 
       const data = await res.json();
@@ -63,7 +63,6 @@ export default function Forecast() {
         description: data.weather[0].description,
         icon: weatherIcon,
       });
-
     } catch (error) {
       console.error(error);
     } finally {
@@ -86,13 +85,13 @@ export default function Forecast() {
   };
 
   return (
-    <section className="w-full py-20 ">
+    <section className="w-full py-10 ">
       <div className="flex flex-col items-center justify-center mx-10 font-inter">
-        <h1 className=" font-bold text-center text-base md:text-5xl leading-snug mb-3">
-          Search for Weather and Get Fit Recommendations!
+        <h1 className=" font-bold text-center text-2xl md:text-5xl leading-snug mb-3">
+          Search for Weather and Get Outfit Recommendations!
         </h1>
         <p className="text-gray-500 text-sm md:text-base">
-                  Find Out What to Wear for Every <strong>Weather</strong>
+          Find Out What to Wear for Every <strong>Weather</strong>
         </p>
 
         <form
@@ -112,7 +111,7 @@ export default function Forecast() {
             type="submit"
             variant="secondary"
             size="md"
-            className="md:p-4 outline:none"
+            className="p-2 md:p-4 outline:none"
             disabled={loading}
           >
             <HiSearch className="font-extrabold" />
@@ -141,41 +140,40 @@ export default function Forecast() {
   );
 }
 
-
 interface WeatherState {
-    temp: string;
-    location: string;
-    description: string;
-    icon: any; 
-  }
-
-const getWeatherIcon = ( iconCode: string ) => {
-    const iconMap: { [key: string]: any } = {
-        // Clear sky
-        '01d': Clear,
-        '01n': Clear,
-
-        // Few clouds
-        '02d': Cloud,
-        '02n': Cloud,
-
-        // Scattered clouds / broken clouds
-        '03d': Cloud,
-        '03n': Cloud,
-        '04d': Cloud,
-        '04n': Cloud,
-
-        // Shower rain / rain
-        '09d': Rain,
-        '09n': Rain,
-        '10d': Rain,
-        '10n': Rain,
-
-        // Snow
-        '13d': Snow,
-        '13n': Snow,
-    };
-
-    // Return the mapped icon or fallback to Cloud
-    return iconMap[iconCode] || Cloud;
+  temp: string;
+  location: string;
+  description: string;
+  icon: any;
 }
+
+const getWeatherIcon = (iconCode: string) => {
+  const iconMap: { [key: string]: any } = {
+    // Clear sky
+    "01d": Clear,
+    "01n": Clear,
+
+    // Few clouds
+    "02d": Cloud,
+    "02n": Cloud,
+
+    // Scattered clouds / broken clouds
+    "03d": Cloud,
+    "03n": Cloud,
+    "04d": Cloud,
+    "04n": Cloud,
+
+    // Shower rain / rain
+    "09d": Rain,
+    "09n": Rain,
+    "10d": Rain,
+    "10n": Rain,
+
+    // Snow
+    "13d": Snow,
+    "13n": Snow,
+  };
+
+  // Return the mapped icon or fallback to Cloud
+  return iconMap[iconCode] || Cloud;
+};

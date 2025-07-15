@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400","500","600","700","800"]
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"]
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -28,8 +29,15 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${outfit.className} antialiased overflow-x-hidden dark scrollbar-thin scrollbar-track-nature-green scrollbar-thumb-nature-green`}
       >
-        <Header />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange 
+        >
+            <Header />
+            {children}
+           </ThemeProvider>
       </body>
     </html>
   );
