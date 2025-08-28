@@ -1,10 +1,20 @@
-import React from "react";
 
 
-export default function ForecaxtLayout ( {children, }: {children: React.ReactNode; } ){
-    return(
-        <div>
-            {children}
+export default function ForecastLayout({
+  children,
+  recommendation,
+  params
+}: {
+  children: React.ReactNode;
+  recommendation: React.ReactNode;
+  params: {location?: string};
+}){
+  return (
+      <div>
+        <div> {children} </div>
+        <div className="flex flex-col justify-center items-center">
+          <div>{recommendation}</div>
         </div>
-    )
+      </div>
+  );
 }

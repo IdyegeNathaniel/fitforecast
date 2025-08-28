@@ -5,7 +5,6 @@ import { useState } from "react";
 import { HiSearch } from "react-icons/hi";
 import Cloud from "@/assets/cloud.png";
 import Clear from "@/assets/clear.png";
-import Drizzle from "@/assets/drizzle.png";
 import Rain from "@/assets/rain.png";
 import Snow from "@/assets/snow.png";
 import Image from "next/image";
@@ -28,7 +27,7 @@ export default function Forecast() {
 
   const fetchData = async (searchLocation: string) => {
     if (!searchLocation.trim()) {
-      setError("Search a Location !");
+      setError("Input a Valid Location !");
       return;
     }
 
