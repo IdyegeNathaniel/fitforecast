@@ -6,11 +6,10 @@ import { HiSearch } from "react-icons/hi";
 import Cloud from "@/assets/cloud.png";
 import Clear from "@/assets/clear.png";
 import Rain from "@/assets/rain.png";
-import Snow from "@/assets/snow.png";
 import Image from "next/image";
 import Spinner from "@/components/Spinner";
 
-export default function Forecast() {
+export default function Forecast({onWeatherUpdate}: ForeCastProps) {
   const [location, setLocation] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -62,6 +61,14 @@ export default function Forecast() {
         description: data.weather[0].description,
         icon: weatherIcon,
       });
+
+      if (onWeatherUpdate) {
+        onWeatherUpdate({
+          temp: Math.floor(data.main.temp),
+          description: data.weather[0].description,
+        });
+      }
+
     } catch (error) {
       console.error(error);
     } finally {
@@ -78,7 +85,7 @@ export default function Forecast() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault();   
 
     await fetchData(location);
   };
@@ -87,23 +94,23 @@ export default function Forecast() {
     <section className="w-full py-10 ">
       <div className="flex flex-col items-center justify-center mx-10 font-inter">
         <h1 className=" font-bold text-center text-2xl md:text-5xl leading-snug mb-3">
-          Search for Weather and Get Outfit Recommendations!
+          Weather & Outfit Recommendations!
         </h1>
-        <p className="text-gray-500 text-sm md:text-base">
-          Find Out What to Wear for Every <strong>Weather</strong>
+        <p className="text-gray-500 text-sm md:text-base text-center">
+          Enter a city name to get weather nformation & personalized <strong>Outfit</strong>
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="w-2/4 flex items-center justify-center my-5"
+          className="w-full md:w-2/4 flex items-center justify-center my-5"
         >
-          <input
+          <input 
             type="text"
             id="locationName"
             placeholder="Search Location"
             value={location}
             onChange={handleInput}
-            disabled={loading}
+            onKeyPress={(e) => e.key === "Enter" && fetchData(location) }
           />
 
           <Button
@@ -146,6 +153,13 @@ interface WeatherState {
   icon: any;
 }
 
+interface ForeCastProps {
+  onWeatherUpdate?: (data : {
+    temp: number;
+    description: string;
+  }) => void;
+}
+
 const getWeatherIcon = (iconCode: string) => {
   const iconMap: { [key: string]: any } = {
     // Clear sky
@@ -167,10 +181,6 @@ const getWeatherIcon = (iconCode: string) => {
     "09n": Rain,
     "10d": Rain,
     "10n": Rain,
-
-    // Snow
-    "13d": Snow,
-    "13n": Snow,
   };
 
   // Return the mapped icon or fallback to Cloud
