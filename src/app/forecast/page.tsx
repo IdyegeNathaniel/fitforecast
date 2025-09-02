@@ -9,7 +9,7 @@ import Rain from "@/assets/rain.png";
 import Image from "next/image";
 import Spinner from "@/components/Spinner";
 
-export default function Forecast({onWeatherUpdate}: ForeCastProps) {
+export default function Forecast({ onWeatherUpdate }: ForeCastProps) {
   const [location, setLocation] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -34,9 +34,8 @@ export default function Forecast({onWeatherUpdate}: ForeCastProps) {
     setError("");
 
     try {
-      const api_url = `${
-        process.env.NEXT_PUBLIC_WEATHER_API_URL
-      }?q=${encodeURIComponent(searchLocation)}&appid=${api}&units=metric`;
+      const api_url = `${process.env.NEXT_PUBLIC_WEATHER_API_URL
+        }?q=${encodeURIComponent(searchLocation)}&appid=${api}&units=metric`;
 
       const res = await fetch(api_url);
 
@@ -85,7 +84,7 @@ export default function Forecast({onWeatherUpdate}: ForeCastProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();   
+    e.preventDefault();
 
     await fetchData(location);
   };
@@ -104,13 +103,13 @@ export default function Forecast({onWeatherUpdate}: ForeCastProps) {
           onSubmit={handleSubmit}
           className="w-full md:w-2/4 flex items-center justify-center my-5"
         >
-          <input 
+          <input
             type="text"
             id="locationName"
             placeholder="Search Location"
             value={location}
             onChange={handleInput}
-            onKeyPress={(e) => e.key === "Enter" && fetchData(location) }
+            onKeyPress={(e) => e.key === "Enter" && fetchData(location)}
           />
 
           <Button
@@ -154,7 +153,7 @@ interface WeatherState {
 }
 
 interface ForeCastProps {
-  onWeatherUpdate?: (data : {
+  onWeatherUpdate?: (data: {
     temp: number;
     description: string;
   }) => void;

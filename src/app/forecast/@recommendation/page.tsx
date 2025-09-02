@@ -71,11 +71,6 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
                 <h3 className="text-2xl font-bold text-gray-800">
                     Outfit Recommendation
                 </h3>
-
-                <div className="mt-2 text-lg">
-                    <span className="font-medium">{Math.round(temp)}°C</span>
-                    <span className="text-gray-500 ml-2 capitalize">{description}</span>
-                </div>
             </div>
 
             <div className="space-y-4">
@@ -96,7 +91,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
                 <div>
                     <h4 className="font-semibold text-gray-700 mb-2 flex items-center">
-                        <span className="w-2 h-2 bg-nature-green rounded-full mr-2"></span>
+                        <span className="w-2 h-2 bg-energizing-orange rounded-full mr-2"></span>
                         Footwear
                     </h4>
                     <p className="text-gray-600 flex items-center">
@@ -124,7 +119,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
                 <div className={`mt-6 p-4 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 border-l-4 ${outfit.color.replace('text-', 'border-')}`}>
                     <p className="text-sm text-gray-700">
-                        <strong>Pro tip:</strong> Layer your clothing so you can adjust throughout the day!
+                        <strong>Pro tip:</strong> Adjust the clothing recommendations to fit your day!
                     </p>
                 </div>
             </div>
