@@ -1,4 +1,3 @@
-import { MdDescription } from "react-icons/md";
 
 interface OutfitProps {
     temp: number;
@@ -25,25 +24,25 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
             color: 'text-blue-600'
         };
 
-        if (tempC >= 25) {
+        if (tempC >= 30) {
             outfit.clothing = ['Light t-shirt', 'Shorts or light dress', 'Breathable fabrics'];
-            outfit.footwear = 'Sandals or sneakers';
-            outfit.accessories = ['Sunglasses', 'Sun hat', 'Sunscreen'];
+            outfit.footwear = 'Sandals, slides or sneakers';
+            outfit.accessories = ['Sunglasses', 'Face Cap', 'Sunscreen'];
             outfit.color = 'text-orange-600';
-        } else if (tempC >= 18) {
+        } else if (tempC >= 21 && tempC <= 29) {
             outfit.clothing = ['Light sweater or cardigan', 'Jeans or chinos', 'Cotton shirt'];
             outfit.footwear = 'Comfortable shoes or sneakers';
             outfit.accessories = ['Light jacket (optional)'];
             outfit.color = 'text-green-600';
-        } else if (tempC >= 10) {
+        } else if (tempC >= 20) {
             outfit.clothing = ['Warm sweater', 'Long pants', 'Layered clothing'];
             outfit.footwear = 'Closed shoes or boots';
             outfit.accessories = ['Light jacket or coat'];
             outfit.color = 'text-blue-600';
         } else {
-            outfit.clothing = ['Heavy coat or jacket', 'Warm sweater', 'Thermal layers'];
-            outfit.footwear = 'Warm boots';
-            outfit.accessories = ['Scarf', 'Warm hat'];
+            outfit.clothing = ['--', '--', '--'];
+            outfit.footwear = '--';
+            outfit.accessories = ['--', '--'];
             outfit.color = 'text-purple-600';
         }
 
@@ -63,7 +62,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
         return outfit;
     };
-    
+
     const outfit = getOutfitRecommendation();
 
     return (
@@ -72,7 +71,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
                 <h3 className="text-2xl font-bold text-gray-800">
                     Outfit Recommendation
                 </h3>
-                
+
                 <div className="mt-2 text-lg">
                     <span className="font-medium">{Math.round(temp)}°C</span>
                     <span className="text-gray-500 ml-2 capitalize">{description}</span>
@@ -82,7 +81,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
             <div className="space-y-4">
                 <div>
                     <h4 className="font-semibold text-gray-700 mb-2 flex items-center">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        <span className="w-2 h-2 bg-calming-blue rounded-full mr-2"></span>
                         Clothing
                     </h4>
                     <ul className="text-gray-600 space-y-1">
@@ -97,7 +96,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
                 <div>
                     <h4 className="font-semibold text-gray-700 mb-2 flex items-center">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        <span className="w-2 h-2 bg-nature-green rounded-full mr-2"></span>
                         Footwear
                     </h4>
                     <p className="text-gray-600 flex items-center">
@@ -109,7 +108,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
                 {outfit.accessories.length > 0 && (
                     <div>
                         <h4 className="font-semibold text-gray-700 mb-2 flex items-center">
-                            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span className="w-2 h-2 bg-vibrant-green rounded-full mr-2"></span>
                             Accessories
                         </h4>
                         <ul className="text-gray-600 space-y-1">

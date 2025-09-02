@@ -24,7 +24,6 @@ export default function ForecastLayout({
   }
   return (
       <div>
-        \
         <div> <Forecast onWeatherUpdate={handleWeatherUpdate} /> </div>
         <div className="flex flex-col justify-center items-center">
         <div> <FitRecommendation temp={weatherInfo?.temp || 0}

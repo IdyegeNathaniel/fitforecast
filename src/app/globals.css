@@ -3,6 +3,9 @@
 @import "tailwind-scrollbar-utilities";
 @custom-variant dark (&:where(.dark, .dark *));
 
+*{
+scroll-behavior: smooth;
+}
 
 @theme {
   --color-calming-blue: #4567b7;
