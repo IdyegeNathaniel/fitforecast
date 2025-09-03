@@ -5,12 +5,11 @@ type ButtonVariant = 'primary' | 'secondary'
 interface ButtonProps extends ButtonHTMLAttributes <HTMLButtonElement> {
     variant?: ButtonVariant,
     size: 'md' | 'lg',
-    isLoading?: boolean,
     fullwidth?: boolean
 }
 
 
-const Button: React.FC<ButtonProps> = ({children, variant= 'primary', size= 'lg', fullwidth = false, isLoading = false, className='', ...rest}) => {
+const Button: React.FC<ButtonProps> = ({children, variant= 'primary', size= 'lg', fullwidth = false, className='', ...rest}) => {
 
     const baseStyling = 'font-medium focus:outline-none transition-colors duration-200 cursor-pointer'
     

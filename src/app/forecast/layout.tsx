@@ -9,13 +9,7 @@ interface WeatherInfo{
   temp: number;
   description: string;
 }
-export default function ForecastLayout({
-  children,
-  recommendation,
-}: {
-  children: React.ReactNode;
-  recommendation: React.ReactNode;
-}){
+export default function ForecastLayout(){
 
   const [weatherInfo, setWeatherInfo] = useState<WeatherInfo | null>(null);
 

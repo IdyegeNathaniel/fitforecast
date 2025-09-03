@@ -17,7 +17,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
         const tempC = Math.round(temp);
         const desc = description.toLowerCase();
 
-        let outfit: OutfitRecommendations = {
+        const outfit: OutfitRecommendations = {
             clothing: [],
             accessories: [],
             footwear: '',

@@ -6,7 +6,7 @@ import { HiSearch } from "react-icons/hi";
 import Cloud from "@/assets/cloud.png";
 import Clear from "@/assets/clear.png";
 import Rain from "@/assets/rain.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Spinner from "@/components/Spinner";
 
 export default function Forecast({ onWeatherUpdate }: ForeCastProps) {
@@ -149,7 +149,7 @@ interface WeatherState {
   temp: string;
   location: string;
   description: string;
-  icon: any;
+  icon: StaticImageData;
 }
 
 interface ForeCastProps {
@@ -160,7 +160,7 @@ interface ForeCastProps {
 }
 
 const getWeatherIcon = (iconCode: string) => {
-  const iconMap: { [key: string]: any } = {
+  const iconMap: { [key: string]: StaticImageData } = {
     // Clear sky
     "01d": Clear,
     "01n": Clear,
