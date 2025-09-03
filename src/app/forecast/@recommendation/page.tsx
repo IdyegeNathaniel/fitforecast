@@ -34,7 +34,7 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
             outfit.footwear = 'Comfortable shoes or sneakers';
             outfit.accessories = ['Light jacket (optional)'];
             outfit.color = 'text-green-600';
-        } else if (tempC >= 20) {
+        } else if (tempC <= 20) {
             outfit.clothing = ['Warm sweater', 'Long pants', 'Layered clothing'];
             outfit.footwear = 'Closed shoes or boots';
             outfit.accessories = ['Light jacket or coat'];
@@ -48,12 +48,12 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
         // Weather condition adjustments based on description
         if (desc.includes('rain') || desc.includes('drizzle')) {
-            outfit.accessories.push('Umbrella', 'Waterproof jacket');
+            outfit.accessories.push('Umbrella or Waterproof jacket');
             outfit.footwear = 'Waterproof shoes or boots';
         }
 
         if (desc.includes('wind')) {
-            outfit.accessories.push('Windbreaker or wind-resistant jacket');
+            outfit.accessories.push('Less Accessories');
         }
 
         if (desc.includes('cloud') && tempC < 20) {
