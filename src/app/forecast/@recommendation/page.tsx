@@ -1,7 +1,7 @@
 
 interface OutfitProps {
-    temp: number;
-    description: string;
+    temp?: number;
+    description?: string;
 }
 
 interface OutfitRecommendations {
@@ -11,7 +11,7 @@ interface OutfitRecommendations {
     color: string;
 }
 
-export default function FitRecommendation({ temp, description }: OutfitProps) {
+export default function FitRecommendation({ temp=0, description='' }: OutfitProps) {
 
     const getOutfitRecommendation = (): OutfitRecommendations => {
         const tempC = Math.round(temp);
@@ -62,6 +62,16 @@ export default function FitRecommendation({ temp, description }: OutfitProps) {
 
         return outfit;
     };
+
+    if (!temp && !description) {
+        return (
+            <div className="bg-white rounded-xl shadow-lg p-6 font-inter h-full flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                    <p className="text-lg">Search for weather to see outfit recommendations!</p>
+                </div>
+            </div>
+        );
+    }
 
     const outfit = getOutfitRecommendation();
 

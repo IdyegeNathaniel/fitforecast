@@ -22,7 +22,7 @@ export default function Forecast({ onWeatherUpdate }: ForeCastProps) {
 
   // WEATHER API
 
-  const api = process.env.NEXT_PUBLIC_WEATHER_API;
+  const api = process.env.NEXT_PUBLIC_WEATHER_API || '';
 
   const fetchData = async (searchLocation: string) => {
     if (!searchLocation.trim()) {
