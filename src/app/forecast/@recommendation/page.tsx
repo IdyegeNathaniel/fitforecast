@@ -65,9 +65,9 @@ export default function FitRecommendation({ temp=0, description='' }: OutfitProp
 
     if (!temp && !description) {
         return (
-            <div className="bg-white rounded-xl shadow-lg p-6 font-inter h-full flex items-center justify-center">
+            <div className="bg-white rounded-xl shadow-lg p-6 mx-auto font-inter h-full flex items-center justify-center">
                 <div className="text-center text-gray-500">
-                    <p className="text-lg">Search for weather to see outfit recommendations!</p>
+                    <p className="text-lg">Outfit Recommendations</p>
                 </div>
             </div>
         );
@@ -76,7 +76,7 @@ export default function FitRecommendation({ temp=0, description='' }: OutfitProp
     const outfit = getOutfitRecommendation();
 
     return (
-        <div className="bg-white rounded-xl shadow-lg p-6 font-inter">
+        <div className="bg-white rounded-xl shadow-lg p-4 mx-3 font-inter">
             <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-800">
                     Outfit Recommendation

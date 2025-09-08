@@ -103,24 +103,26 @@ export default function Forecast({ onWeatherUpdate }: ForeCastProps) {
           onSubmit={handleSubmit}
           className="w-full md:w-2/4 flex items-center justify-center my-5"
         >
-          <input
-            type="text"
-            id="locationName"
-            placeholder="Search Location"
-            value={location}
-            onChange={handleInput}
-            onKeyPress={(e) => e.key === "Enter" && fetchData(location)}
-          />
+          <div className="flex">
+            <input
+              type="text"
+              id="locationName"
+              placeholder="Search Location"
+              value={location}
+              onChange={handleInput}
+              onKeyPress={(e) => e.key === "Enter" && fetchData(location)}
+            />
 
-          <Button
-            type="submit"
-            variant="secondary"
-            size="md"
-            className="p-2 md:p-4 outline:none"
-            disabled={loading}
-          >
-            <HiSearch className="font-extrabold" />
-          </Button>
+            <Button
+              type="submit"
+              variant="secondary"
+              size="md"
+              className="p-2 md:p-4 outline:none"
+              disabled={loading}
+            ><HiSearch className="font-extrabold" />
+            </Button>
+          </div>
+            
         </form>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
