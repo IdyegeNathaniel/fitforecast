@@ -1,64 +1,68 @@
-**FitForecast**
+### **FitForecast**
+---
 A minimalistic web application that provides daily weather forecasts and intelligent outfit recommendations based on current conditions.
 
-**Overview**
+### **Overview**
+---
 FitForecast takes the guesswork out of getting dressed by combining real-time weather data with smart outfit suggestions. Simply check the app to see what the weather will be like and what you should wear.
 
-**Features**
-
+### **Features**
+---
 * **Real-time Weather Data** - Get accurate weather forecasts powered by OpenWeather API
 * **Smart Outfit Suggestions** - Receive clothing recommendations tailored to the day's weather conditions
 * **Clean, Minimalist UI** - Simple and intuitive interface that gets you the information you need quickly
 * **Responsive Design** - Works seamlessly across desktop and mobile devices
 
-**Tech Stack**
+### **Tech Stack**
+---
+* Next.js - React framework for production
+* Tailwind CSS - Utility-first CSS framework
+* OpenWeather API - Weather data provider
 
-Next.js - React framework for production
-Tailwind CSS - Utility-first CSS framework
-OpenWeather API - Weather data provider
-
-**Getting Started**
+### **Getting Started**
+---
 *Prerequisites*
-
+---
 * Node.js 16.x or higher
 * npm or yarn
 * OpenWeather API key (Get one here)
 
-**Installation**
-
-* Clone the repository
-
+### **Installation**
+---
+1. Clone the repository
+---
 *git clone https://github.com/IdyegeNathaniel/fitforecast.git*
 *cd fitforecast*
+---
+2. Install dependencies
 
-* Install dependencies
-
-*bashnpm install*
+*npm install*
 # or
 *yarn install*
 
-* Create a .env.local file in the root directory and add your OpenWeather API key
+3. Create a .env.local file in the root directory and add your OpenWeather API key
 
 *envNEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here*
 
-* Run the development server
+4. Run the development server
 
-*bashnpm run dev*
+*npm run dev*
 # or
 *yarn dev*
 
 * Open http://localhost:3000 in your browser
-
-**Usage**
-
+---
+###**Usage**
+---
 * The app will request your location permission to provide local weather data
 * View the current weather forecast for your area
 * Check the suggested outfit based on temperature, conditions, and time of day
-
-**Building for Production**
+---
+###**Building for Production**
+---
 * npm run build
 * npm start
 
-**Contributing**
-
+###**Contributing**
+---
 Contributions are welcome! Please feel free to submit a Pull Request.
