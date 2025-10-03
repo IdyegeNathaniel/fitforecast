@@ -22,7 +22,7 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 ### **Getting Started**
 ---
 *Prerequisites*
----
+
 * Node.js 16.x or higher
 * npm or yarn
 * OpenWeather API key (Get one here)
@@ -30,14 +30,14 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 ### **Installation**
 ---
 1. Clone the repository
----
-*git clone https://github.com/IdyegeNathaniel/fitforecast.git*
+
+* git clone https://github.com/IdyegeNathaniel/fitforecast.git*
 *cd fitforecast*
----
+
 2. Install dependencies
 
 *npm install*
-# or
+ or
 *yarn install*
 
 3. Create a .env.local file in the root directory and add your OpenWeather API key
@@ -47,22 +47,22 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 4. Run the development server
 
 *npm run dev*
-# or
+or
 *yarn dev*
 
 * Open http://localhost:3000 in your browser
----
-###**Usage**
+
+### **Usage**
 ---
 * The app will request your location permission to provide local weather data
 * View the current weather forecast for your area
 * Check the suggested outfit based on temperature, conditions, and time of day
----
-###**Building for Production**
+  
+### **Building for Production**
 ---
 * npm run build
 * npm start
 
-###**Contributing**
+### **Contributing**
 ---
 Contributions are welcome! Please feel free to submit a Pull Request.
