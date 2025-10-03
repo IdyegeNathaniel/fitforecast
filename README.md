@@ -31,8 +31,9 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 ---
 1. Clone the repository
 
-* git clone https://github.com/IdyegeNathaniel/fitforecast.git*
-*cd fitforecast*
+* git clone ``https://github.com/IdyegeNathaniel/fitforecast.git``
+  
+``cd fitforecast``
 
 2. Install dependencies
 
