@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**FitForecast**
+A minimalistic web application that provides daily weather forecasts and intelligent outfit recommendations based on current conditions.
 
-## Getting Started
+**Overview**
+FitForecast takes the guesswork out of getting dressed by combining real-time weather data with smart outfit suggestions. Simply check the app to see what the weather will be like and what you should wear.
 
-First, run the development server:
+**Features**
 
-```bash
-npm run dev
+* **Real-time Weather Data** - Get accurate weather forecasts powered by OpenWeather API
+* **Smart Outfit Suggestions** - Receive clothing recommendations tailored to the day's weather conditions
+* **Clean, Minimalist UI** - Simple and intuitive interface that gets you the information you need quickly
+* **Responsive Design** - Works seamlessly across desktop and mobile devices
+
+**Tech Stack**
+
+Next.js - React framework for production
+Tailwind CSS - Utility-first CSS framework
+OpenWeather API - Weather data provider
+
+**Getting Started**
+*Prerequisites*
+
+* Node.js 16.x or higher
+* npm or yarn
+* OpenWeather API key (Get one here)
+
+**Installation**
+
+* Clone the repository
+
+*git clone https://github.com/IdyegeNathaniel/fitforecast.git*
+*cd fitforecast*
+
+* Install dependencies
+
+*bashnpm install*
 # or
-yarn dev
+*yarn install*
+
+* Create a .env.local file in the root directory and add your OpenWeather API key
+
+*envNEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here*
+
+* Run the development server
+
+*bashnpm run dev*
 # or
-pnpm dev
-# or
-bun dev
-```
+*yarn dev*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Open http://localhost:3000 in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Usage**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* The app will request your location permission to provide local weather data
+* View the current weather forecast for your area
+* Check the suggested outfit based on temperature, conditions, and time of day
 
-## Learn More
+**Building for Production**
+* npm run build
+* npm start
 
-To learn more about Next.js, take a look at the following resources:
+**Contributing**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please feel free to submit a Pull Request.
