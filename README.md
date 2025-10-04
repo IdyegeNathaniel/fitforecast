@@ -36,7 +36,7 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
   https://github.com/IdyegeNathaniel/fitforecast.git
   ```
 
-2. Ch  q
+2. Change Directory
 ```js 
 cd fitforecast
 ```
@@ -49,15 +49,19 @@ cd fitforecast
 
 4. Create a .env.local file in the root directory and add your OpenWeather API key
 
-*envNEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here*
+*env NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here*
 
 5. Run the development server
 
-*npm run dev*
+```js
+npm run dev
+```
 or
-*yarn dev*
+```js
+yarn dev
+```
 
-* Open http://localhost:3000 in your browser
+* Open ```js http://localhost:3000 ``` in your browser
 
 ### **Usage**
 ---
