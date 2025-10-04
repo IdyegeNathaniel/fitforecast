@@ -32,21 +32,26 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 1. Clone the repository
 
 * git clone
-  ```js https://github.com/IdyegeNathaniel/fitforecast.git```
-  
-```js cd fitforecast```
+  ```js
+  https://github.com/IdyegeNathaniel/fitforecast.git
+  ```
 
-2. Install dependencies
+2. Ch  q
+```js 
+cd fitforecast
+```
+
+3. Install dependencies
 
 *npm install*
  or
 *yarn install*
 
-3. Create a .env.local file in the root directory and add your OpenWeather API key
+4. Create a .env.local file in the root directory and add your OpenWeather API key
 
 *envNEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here*
 
-4. Run the development server
+5. Run the development server
 
 *npm run dev*
 or
