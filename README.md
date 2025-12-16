@@ -25,7 +25,7 @@ FitForecast takes the guesswork out of getting dressed by combining real-time we
 
 * Node.js 16.x or higher
 * npm or yarn
-* OpenWeather API key (Get one here)
+* OpenWeather API key
 
 ### **Installation**
 ---
